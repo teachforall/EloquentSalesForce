@@ -27,8 +27,9 @@ class SOQLBuilder extends Builder
         //$pdo->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
         //$pdo = new \Illuminate\Database\PDO\Connection($pdo);
 
-		$query->connection = new SOQLConnection();
-		$query->grammar = new SOQLGrammar();
+		// Fixed for Laravel 12
+        $query->connection = new SOQLConnection();
+        $query->grammar = new SOQLGrammar($query->connection);
         $query->connection->setGrammar($query->grammar);
 
 		parent::__construct($query);
