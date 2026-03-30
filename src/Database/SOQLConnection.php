@@ -73,7 +73,7 @@ class SOQLConnection extends Connection
 	/**
 	 * {@inheritDoc}
 	 */
-	public function cursor($query, $bindings = [], $useReadPdo = true)
+	public function cursor($query, $bindings = [], $useReadPdo = true, array $fetchUsing = [])
 	{
 		$result = $this->run($query, $bindings, function($query, $bindings) {
 			if ($this->pretending()) {
