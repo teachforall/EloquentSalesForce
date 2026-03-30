@@ -34,7 +34,7 @@ class SOQLConnection extends Connection
 	/**
 	 * {@inheritDoc}
 	 */
-	public function select($query, $bindings = [], $useReadPdo = true)
+	public function select($query, $bindings = [], $useReadPdo = true, array $fetchUsing = [])
 	{
         try {
 		    return $this->run($query, $bindings, function($query, $bindings) use ($useReadPdo) {
