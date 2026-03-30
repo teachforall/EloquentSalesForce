@@ -35,6 +35,11 @@ class SOQLGrammar extends Grammar
         'for',
 	];
 
+    public function __construct(Connection $connection)
+    {
+        parent::__construct($connection);
+    }
+
     public function getModel()
     {
         return $this->model;
