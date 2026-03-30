@@ -35,7 +35,7 @@ class SOQLGrammar extends Grammar
         'for',
 	];
 
-    public function __construct(Connection $connection)
+    public function __construct(\Illuminate\Database\Connection $connection)
     {
         parent::__construct($connection);
     }
